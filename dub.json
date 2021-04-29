@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"HuskyNator"
+	],
+	"copyright": "Copyright © 2021, HuskyNator",
+	"dependencies": {
+		"hoekjed": "~>0.0.1+commit.1.geea33a2"
+	},
+	"description": "Dutch OpenGL passion project",
+	"license": "proprietary",
+	"name": "hoekjed_voorbeeld"
+}
