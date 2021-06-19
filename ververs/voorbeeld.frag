@@ -6,10 +6,10 @@ in vec2 sbeeldplek;
 
 uniform mat4 projectieM;
 uniform mat4 zichtM;
-uniform mat4 tekenM;
+uniform mat4 eigenM;
 
 out vec4 kleur;
 
 void main(){
-	kleur = vec4(0, 1, 0, 0.5);
+	kleur=vec4(0,1,0,.5);
 }

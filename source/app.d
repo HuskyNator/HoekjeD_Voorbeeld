@@ -10,7 +10,6 @@ import std.math;
 import hoekjed;
 
 void main() {
-
 	hdZetOp();
 	// Venster.zetStandaardDoorzichtig(true);
 	Venster venster = new Venster();
@@ -28,7 +27,7 @@ void main() {
 
 	Ding vlak = new SimpelVoorwerp(plekken, normalen, beeldplekken, volgorde);
 	// vlak.plek = Vec!3([0, 1, 0]);
-	wereld.dingen ~= vlak;
+	// wereld.dingen ~= vlak;
 
 	Vec!3[] plekken2 = [
 		{[-0.5f, -0.5, -0.5f]}, {[0.5f, 0.5, -0.5f]}, {[0, -0.5, -0.5f]}
@@ -105,6 +104,21 @@ void main() {
 
 	venster.wereld = wereld;
 	venster.zicht = speler;
+	Vec!3[4] v_plekken = [{[0, 0, 0]}, {[2, 0, 0]}, {[2, 0, 2]}, {[0, 0, 2]}];
+	Vec!2[4] v_beeldplekken = [{[0, 0]}, {[0, 0]}, {[0, 0]}, {[0, 0]}];
+	Vierkant vierkant = new Vierkant(v_plekken, v_beeldplekken);
+	wereld.dingen ~= vierkant;
+
+	Driehoek d = new Driehoek(plekken[0 .. 3], beeldplekken[0 .. 3]);
+	d.kleur = Vec!4([0.5, 0.25, 0.25, 1]);
+	wereld.dingen ~= d;
+
+	import kamera;
+
+	Kamera k = new Kamera();
+	k.gevolgde = speler;
+	wereld.dingen ~= k;
+	k.grootte = Vec!3([0.25, 0.25, 0.25]);
 
 	lus();
 }
